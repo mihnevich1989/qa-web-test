@@ -3,6 +3,12 @@
 // ***********************************************
 /// <reference types="cypress" />
 
+Cypress.Commands.add('loginByWebForm', (username = Cypress.env('USER_LOGIN'), password = Cypress.env('USER_PASS')) => {
+  authorizationPage.fillLoginField(username);
+  authorizationPage.fillPasswordField(password);
+  cy.get(authorizationPage.submitButton).click();
+});
+
 Cypress.Commands.add('normalizeText', { prevSubject: 'text' }, (text) => {
   return text
     .replace(/\n/g, '')

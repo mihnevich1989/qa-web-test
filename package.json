@@ -15,7 +15,6 @@
     "cypress": "^13.13.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-multi-reporters": "^1.6.4",
-    "dotenv": "^16.4.5",
     "eslint": "^9.6.0",
     "eslint-plugin-chai-friendly": "^1.0.0",
     "eslint-plugin-cypress": "^3.3.0",

@@ -1,9 +1,9 @@
 /.vscode
 /node_modules
 /coverage
-/cypress/videos/*
-/cypress/screenshots/*
-/cypress/results/*
+/cypress/videos
+/cypress/screenshots
+/cypress/results
 mochawesome-report/mochawesome.html
 mochawesome.json
 /cypress/reports

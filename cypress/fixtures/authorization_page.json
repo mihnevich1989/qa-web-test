@@ -1,0 +1,13 @@
+{
+  "validationErrorText": {
+    "login": "Пожалуйста, введите логин (минимум 3 символа)",
+    "password": "Пожалуйста, введите пароль (минимум 3 символа)",
+    "authorization": "Неверный логин или пароль"
+  },
+  "failedTestData":[
+    {"login": "тест", "pass": "тест"},
+    {"login": "test", "pass": "test'<script>alert(document.cookie)</script>"},
+    {"login": "test", "pass": "!@#$%^&"},
+    {"login": "test", "pass": "\u00a0\u00a0\u00a0\u00a0"}
+  ]
+}

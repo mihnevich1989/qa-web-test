@@ -9,21 +9,13 @@ describe('Navigation page', () => {
   });
 
   it('should be able all navigation links', { tags: '@smoke' }, () => {
-    cy.get(commonComponents.logo)
-      .should('be.visible')
-      .click();
+    commonComponents.goToHomePageViaLogo();
     cy.url().should('eq', Cypress.config('baseUrl'));
-    cy.get(commonComponents.homeLink)
-      .should('be.visible')
-      .click();
+    commonComponents.goToHomePageViaLink();
     cy.url().should('eq', Cypress.config('baseUrl'));
-    cy.get(commonComponents.registrationLink)
-      .should('be.visible')
-      .click();
+    commonComponents.goToRegistrationPage();
     cy.url().should('eq', `${Cypress.config('baseUrl')}registration`);
-    cy.get(commonComponents.loginLink)
-      .should('be.visible')
-      .click();
+    commonComponents.goToAuthorizationPage();
     cy.url().should('eq', `${Cypress.config('baseUrl')}login`);
   });
 });

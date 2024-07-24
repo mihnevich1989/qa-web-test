@@ -3,8 +3,8 @@
 class AuthorizationPage {
 
   constructor() {
-    this.VALID_BORDER_COLOR = 'rgb(40, 167, 69)';
-    this.INVALID_BORDER_COLOR = 'rgb(220, 53, 69)';
+    this.validBorderColor = 'rgb(40, 167, 69)';
+    this.invalidBorderColor = 'rgb(220, 53, 69)';
   }
 
   get loginField() { return '#loginform-username'; }
@@ -25,6 +25,10 @@ class AuthorizationPage {
    */
   fillPasswordField(password) {
     return cy.get(this.passwordField).type(password);
+  }
+
+  submit() {
+    cy.get(this.submitButton).click();
   }
 
   /**

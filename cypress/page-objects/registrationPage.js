@@ -3,8 +3,8 @@
 class RegistrationPage {
 
   constructor() {
-    this.VALID_BORDER_COLOR = 'rgb(40, 167, 69)';
-    this.INVALID_BORDER_COLOR = 'rgb(220, 53, 69)';
+    this.validBorderColor = 'rgb(40, 167, 69)';
+    this.invalidBorderColor = 'rgb(220, 53, 69)';
   }
 
   get nameField() { return '#inputName'; }
@@ -15,7 +15,7 @@ class RegistrationPage {
 
   /** 
    * Ввод имени
-   * @param {string} name - обязательно для заполнения
+   * @param {string} name - имя
    * @return возвращает элемент
    */
   fillNameField(name) {
@@ -24,7 +24,7 @@ class RegistrationPage {
 
   /** 
    * Ввод емайл
-   * @param {string} email - обязательно для заполнения
+   * @param {string} email - емайл
    * @return возвращает элемент
    */
   fillEmailField(email) {
@@ -33,7 +33,7 @@ class RegistrationPage {
 
   /**
    * Ввод пароля
-   * @param {string} password - обязательно для заполнения
+   * @param {string} password - пароль
    * @return возвращает элемент
    */
   fillPasswordField(password) {
@@ -46,7 +46,7 @@ class RegistrationPage {
 
   /**
    * Поиск соседнего элемента с текстом валидации по отношению к `element` и получение текста из него
-   * @param {element} element - обязательно для заполнения
+   * @param {element} element - обращение к селектору
    * @returns текст
    */
   getValidationErrorText(element) {

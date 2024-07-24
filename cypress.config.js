@@ -24,7 +24,11 @@ module.exports = defineConfig({
     USER_PASS: 'test',
     REGISTRATION_NAME: 'tester',
     REGISTRATION_EMAIL: 'test@example.com',
-    REGISTRATION_PASS: '1234'
+    REGISTRATION_PASS: '1234',
+    LOGIN_URL: 'https://enotes.pointschool.ru/login',
+    CREATE_BASKET_URL: 'https://enotes.pointschool.ru/basket/create',
+    CLEAR_BASKET_URL: 'http://enotes.pointschool.ru/basket/clear',
+    GET_BASKET_URL: 'http://enotes.pointschool.ru/basket/get'
   },
   e2e: {
     baseUrl: 'https://enotes.pointschool.ru/',

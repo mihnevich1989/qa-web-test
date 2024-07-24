@@ -12,21 +12,21 @@ describe('Authorization page', () => {
 
   context('Positive tests', () => {
 
-    it('should be able all elements', { tags: '@smoke' }, () => {
+    it('should be able form elements', { tags: '@smoke' }, () => {
       cy.get(authorizationPage.loginField).should('be.visible');
       cy.get(authorizationPage.passwordField).should('be.visible');
       cy.get(authorizationPage.submitButton).should('be.visible');
     });
 
     it('should be visible correct validation', () => {
-      authorizationPage.fillLoginField(Cypress.env('USER_LOGIN')).should('have.css', 'border-color', authorizationPage.VALID_BORDER_COLOR);
-      authorizationPage.fillPasswordField(Cypress.env('USER_PASS')).should('have.css', 'border-color', authorizationPage.VALID_BORDER_COLOR);
+      authorizationPage.fillLoginField(Cypress.env('USER_LOGIN')).should('have.css', 'border-color', authorizationPage.validBorderColor);
+      authorizationPage.fillPasswordField(Cypress.env('USER_PASS')).should('have.css', 'border-color', authorizationPage.validBorderColor);
     });
 
     it('should be logged in', { tags: '@smoke' }, () => {
       cy.loginByWebForm();
-      cy.get(commonComponents.userMenu).should('have.text', 'test');
-      cy.get(commonComponents.siteErrorComponent).should('not.exist');
+      commonComponents.checkUserLogin(Cypress.env('USER_LOGIN'));
+      commonComponents.isPageErrorNotPresent();
     });
   });
 
@@ -36,11 +36,11 @@ describe('Authorization page', () => {
       authorizationPage.fillLoginField(' ')
         .as('loginField')
         .clear()
-        .should('have.css', 'border-color', authorizationPage.INVALID_BORDER_COLOR);
+        .should('have.css', 'border-color', authorizationPage.invalidBorderColor);
       authorizationPage.getValidationErrorText('@loginField').should('eq', validationErrorText.login);
       cy.get(authorizationPage.passwordField)
         .as('passwordField')
-        .should('have.css', 'border-color', authorizationPage.INVALID_BORDER_COLOR);
+        .should('have.css', 'border-color', authorizationPage.invalidBorderColor);
       authorizationPage.getValidationErrorText('@passwordField').should('eq', validationErrorText.password);
     });
 

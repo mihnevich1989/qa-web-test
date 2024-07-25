@@ -6,9 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run --browser chrome --record --key 397cd06d-6aa0-478f-b62e-f3d8ba84eb75",
-    "cy:smoke": "npx cypress run --env grepTags=@smoke --browser chrome",
-    "precy:run": "npm run clean_windows:reports",
-    "clean_windows:reports": "if exist cypress\\results rmdir /s/q cypress\\results && mkdir cypress\\results"
+    "cy:smoke": "npx cypress run --env grepTags=@smoke --browser chrome"
   },
   "keywords": [],
   "author": "mihnevich",

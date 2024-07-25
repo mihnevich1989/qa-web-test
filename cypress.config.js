@@ -3,6 +3,7 @@ const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/li
 const fs = require('fs');
 
 module.exports = defineConfig({
+  projectId: '8crqv7',
   viewportHeight: 1080,
   viewportWidth: 1920,
   video: true,
